@@ -1,6 +1,7 @@
 
 from flask import Flask, request, render_template
 import logging
+from create_shedule import main as sh
 
 
 # Настройка логгирования
@@ -20,8 +21,9 @@ def submit():
     
     # Логирование полученных данных
     logger.info(f"Получены данные:  option={selected_option}")
-    
-    return f"Вы выбрали: {selected_option}"
+    shedule_for_group = sh(selected_option)
+    logger.info(shedule_for_group)
+    return f"Вы выбрали: {shedule_for_group}"
 
 
 

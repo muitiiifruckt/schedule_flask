@@ -1,7 +1,7 @@
 from processing_data import main as get_data
 import pandas as pd
 
-schedule_data = get_data()
+
 
 def transform_schedule(schedule_data):
     """
@@ -49,5 +49,12 @@ def transform_schedule(schedule_data):
     
     except Exception as e:
         return f"Ошибка преобразования: {e}"
-result_df = transform_schedule(schedule_data)
-print(result_df["вт"])
+
+def main(group):
+    
+    schedule_data = get_data(group)
+    schedule = transform_schedule(schedule_data)
+    return schedule
+if __name__ == ("__main__"):
+    data = main("09-141")    
+    

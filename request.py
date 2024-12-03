@@ -8,8 +8,7 @@ logging.basicConfig(level=logging.DEBUG)  # Устанавливаем уров�
 logger = logging.getLogger(__name__)      # Получаем логгер для текущего модуля
 
 proxies = {
-    "http": "http://148.72.165.7:30158",
-    "https": "http://148.72.165.7:30158",
+    "http": "http://51.79.71.106:8080",
 }
 
 

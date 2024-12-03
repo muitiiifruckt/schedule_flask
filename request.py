@@ -9,8 +9,8 @@ logger = logging.getLogger(__name__)      # Получаем логгер для
 
 proxies = {
     "http": "http://51.79.71.106:8080",
-    "https": "http://51.79.71.106:8080",
 }
+
 
 # Ссылка на сайт с расписанием ВМК
 URL = "https://kpfu.ru/computing-technology/raspisanie" 

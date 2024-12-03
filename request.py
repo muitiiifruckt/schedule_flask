@@ -7,6 +7,10 @@ from io import BytesIO
 logging.basicConfig(level=logging.DEBUG)  # Устанавливаем уровень логирования
 logger = logging.getLogger(__name__)      # Получаем логгер для текущего модуля
 
+proxies = {
+    "http": "http://51.79.71.106:8080",
+    "https": "http://51.79.71.106:8080",
+}
 
 # Ссылка на сайт с расписанием ВМК
 URL = "https://kpfu.ru/computing-technology/raspisanie" 
@@ -16,7 +20,7 @@ Xpath_to_link_with_schedule = '//*[@id="ss_content"]/div[2]/div/div[2]/div[1]/di
 
 
 def get_response(URL):
-    response = requests.get(URL)
+    response = requests.get(URL,proxies=proxies)
     logger.info(f"Получены данные:  option={response.status_code}")
     return response
 
